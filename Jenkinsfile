@@ -1,4 +1,5 @@
 pipeline{
+    stages{
     stage('Build Project'){
         build 'Build'
     }
@@ -11,5 +12,6 @@ pipeline{
     }
     stage ('Deploy to Artifactory'){
         build 'test-artifactory'
+    }
     }
 }
