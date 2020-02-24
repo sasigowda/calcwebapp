@@ -8,12 +8,12 @@ pipeline{
         build 'Build'
         }
     }
-    stage('Compile Package'){
+    stage('Deploy to Tomcat'){
         steps{
         build 'Deploy'
         }
     }
-    stage('Deploy to Tomcat'){ 
+    stage('Performance Test'){ 
         steps{
         build 'PerformTest'
         }
