@@ -9,7 +9,7 @@ pipeline{
     stage('Deploy to Tomcat'){ 
         build 'PerformTest'
     }
-    stage ('Deploy to Artifactory"){
+    stage ('Deploy to Artifactory'){
         build 'test-artifactory'
     }
 }
