@@ -1,12 +1,15 @@
-node{
-    stage('SCM Checkout'){
-        git 'https://github.com/MMuniraja/calcwebapp.git'
+pipeline{
+    stage('Build Project'){
+        build 'Build'
     }
     stage('Compile Package'){
-        def mvnHome = tool name: 'Maven', type: 'maven'
-        sh "${mvnHome}/bin/mvn package"
+        build 'Deploy'
+
     }
     stage('Deploy to Tomcat'){ 
-        sh 'cp target/*.war /opt/tomcat9/webapps'
-    }    
+        build 'PerformTest'
+    }
+    stage ('Deploy to Artifactory"){
+        build 'test-artifactory'
+    }
 }
