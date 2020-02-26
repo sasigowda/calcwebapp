@@ -23,7 +23,7 @@ pipeline{
             build 'test-artifactory'
             }
         }
-        stage ('Deploy to QA Server')   {
+        stage ('Deploy to Prod Server')   {
             steps   {
                 build 'ProdDeploy'
             }
