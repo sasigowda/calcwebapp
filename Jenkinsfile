@@ -3,25 +3,30 @@ pipeline{
     
 
     stages{
-    stage('Build Project'){
-        steps{
-        build 'Build'
+        stage('Build Project'){
+            steps{
+            build 'Build'
+            }
         }
-    }
-    stage('Deploy to Tomcat'){
-        steps{
-        build 'Deploy'
+        stage('Deploy to QA Server'){
+            steps{
+            build 'Deploy'
+            }
         }
-    }
-    stage('Performance Test'){ 
-        steps{
-        build 'PerformTest'
+        stage('Performance Test'){ 
+            steps{
+            build 'PerformTest'
+            }
         }
-    }
-    stage ('Deploy to Artifactory'){
-        steps{
-        build 'test-artifactory'
+        stage ('Deploy to Artifactory'){
+            steps{
+            build 'test-artifactory'
+            }
         }
-    }
+        stage ('Deploy to QA Server')   {
+            steps   {
+                build 'ProdDeploy'
+            }
+        }
     }
 }
