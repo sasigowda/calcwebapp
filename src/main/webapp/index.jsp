@@ -9,7 +9,7 @@
 
 <form action="CalculatorServlet" method="post">
 
-	<input type="text" name="num1" /> <label>+</label>
+	<input type="text" name="num1" /> <label>*</label>
 	<input type="text" name="num2" /> <label>=</label>
 	<%
 		if(strResult != null){
